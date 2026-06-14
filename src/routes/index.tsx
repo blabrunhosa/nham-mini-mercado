@@ -35,6 +35,9 @@ const shortcuts = [
 ] as const;
 
 function Home() {
+  const { session, signOut } = useAuth();
+  const member = isMember(session);
+  const greetName = member ? session.name.split(" ")[0] : "visitante";
   const allProducts = categories.flatMap((c) => c.subcategories.flatMap((s) => s.products));
   const bestSellers = allProducts.filter((p) => p.bestSeller).slice(0, 6);
   const promos = allProducts.filter((p) => p.badge).slice(0, 4);
@@ -51,7 +54,7 @@ function Home() {
               N
             </div>
             <div className="min-w-0">
-              <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Olá, estudante 👋</p>
+              <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Olá, {greetName} 👋</p>
               <p className="flex items-center gap-1 truncate text-sm font-semibold text-foreground">
                 <MapPin className="h-3.5 w-3.5 text-lime" />
                 Campus Central — Bloco A
