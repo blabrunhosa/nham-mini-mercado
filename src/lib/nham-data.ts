@@ -8,6 +8,7 @@ export interface Product {
   stock: number;
   stockStatus: Stock;
   emoji: string;
+  image?: string; // optional product photo URL
   badge?: string;
   bestSeller?: boolean;
   expiresIn?: string; // for refrigerated
