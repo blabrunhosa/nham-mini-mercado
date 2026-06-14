@@ -1,6 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell } from "@/components/nham/Shell";
-import { Bell, CreditCard, MapPin, HelpCircle, LogOut, ChevronRight, Settings, Sparkles, LogIn } from "lucide-react";
+import { Bell, CreditCard, MapPin, HelpCircle, LogOut, ChevronRight, Settings, Sparkles, LogIn, Headset } from "lucide-react";
 import { useAuth, isMember } from "@/lib/auth";
 
 export const Route = createFileRoute("/perfil")({
