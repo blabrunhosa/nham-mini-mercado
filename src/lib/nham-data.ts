@@ -99,8 +99,8 @@ export const categories: Category[] = [
         id: "aguas",
         name: "Águas",
         products: [
-          p("agua", "Água Mineral 500ml", 3.0, "💧", 60),
-          p("aguagas", "Água com Gás 500ml", 4.0, "🫧", 20),
+          p("agua", "Água Mineral 500ml", 4.0, "💧", 60),
+          p("aguagas", "Água com Gás 500ml", 5.0, "🫧", 20),
         ],
       },
     ],
