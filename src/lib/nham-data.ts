@@ -66,8 +66,8 @@ export const categories: Category[] = [
         id: "achocolatados",
         name: "Achocolatados",
         products: [
-          p("nescau", "Nescau Prontinho 200ml", 4.5, "🍫", 22),
-          p("toddy", "Toddynho 200ml", 3.9, "🟫", 30, { bestSeller: true }),
+          p("nescau", "Nescau Prontinho 200ml", 5.5, "🍫", 22),
+          p("toddy", "Toddynho 200ml", 4.9, "🟫", 30, { bestSeller: true }),
         ],
       },
       {
