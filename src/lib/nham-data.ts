@@ -248,6 +248,7 @@ export interface Marmita {
   carbs: number;
   stock: number;
   emoji: string;
+  image?: string;
   tag?: string;
   day: "seg" | "ter" | "qua" | "qui" | "sex";
 }
