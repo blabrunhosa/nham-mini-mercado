@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Shell } from "@/components/nham/Shell";
-import { Bell, CreditCard, MapPin, HelpCircle, LogOut, ChevronRight, Settings, Sparkles } from "lucide-react";
+import { Bell, CreditCard, MapPin, HelpCircle, LogOut, ChevronRight, Settings, Sparkles, LogIn } from "lucide-react";
+import { useAuth, isMember } from "@/lib/auth";
 
 export const Route = createFileRoute("/perfil")({
   head: () => ({
@@ -31,6 +32,12 @@ const groups = [
 ];
 
 function Perfil() {
+  const { session, signOut } = useAuth();
+  const member = isMember(session);
+  const initial = member ? session.name.charAt(0).toUpperCase() : "V";
+  const name = member ? session.name : "Visitante";
+  const email = member ? session.email : "Sem conta vinculada";
+
   return (
     <Shell>
       <header className="px-5 pb-4 pt-6">
@@ -40,17 +47,34 @@ function Perfil() {
       <section className="px-5">
         <div className="flex items-center gap-4 rounded-3xl border border-border bg-surface p-4">
           <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-lime text-2xl font-black text-lime-foreground">
-            E
+            {initial}
           </div>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-base font-bold">Estudante Nham</p>
-            <p className="truncate text-xs text-muted-foreground">aluno@campus.edu</p>
-            <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-lime-soft px-2 py-0.5 text-[10px] font-bold text-lime">
-              <Sparkles className="h-3 w-3" /> Clube Prata · 1.240 pts
-            </span>
+            <p className="truncate text-base font-bold">{name}</p>
+            <p className="truncate text-xs text-muted-foreground">{email}</p>
+            {member ? (
+              <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-lime-soft px-2 py-0.5 text-[10px] font-bold text-lime">
+                <Sparkles className="h-3 w-3" /> Clube Prata · 1.240 pts
+              </span>
+            ) : (
+              <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-surface-3 px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
+                Modo visitante
+              </span>
+            )}
           </div>
         </div>
       </section>
+
+      {!member && (
+        <section className="mt-4 px-5">
+          <button
+            onClick={signOut}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-lime p-4 text-sm font-bold text-lime-foreground shadow-[0_12px_30px_-12px_var(--lime)]"
+          >
+            <LogIn className="h-4 w-4" /> Entrar na minha conta
+          </button>
+        </section>
+      )}
 
       {groups.map((g) => (
         <section key={g.title} className="mt-6 px-5">
@@ -80,9 +104,12 @@ function Perfil() {
       ))}
 
       <section className="mt-6 px-5">
-        <button className="flex w-full items-center justify-center gap-2 rounded-2xl border border-border bg-surface p-4 text-sm font-semibold text-danger transition-colors hover:bg-surface-2">
+        <button
+          onClick={signOut}
+          className="flex w-full items-center justify-center gap-2 rounded-2xl border border-border bg-surface p-4 text-sm font-semibold text-danger transition-colors hover:bg-surface-2"
+        >
           <LogOut className="h-4 w-4" />
-          Sair
+          {member ? "Sair" : "Sair do modo visitante"}
         </button>
       </section>
     </Shell>
