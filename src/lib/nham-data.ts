@@ -74,9 +74,9 @@ export const categories: Category[] = [
         id: "refrigerantes",
         name: "Refrigerantes",
         products: [
-          p("coca", "Coca-Cola Lata 350ml", 5.5, "🥤", 40, { bestSeller: true }),
-          p("guarana", "Guaraná Antarctica 350ml", 5.0, "🟡", 28),
-          p("sprite", "Sprite 350ml", 5.0, "🟩", 16),
+          p("coca", "Coca-Cola Lata 350ml", 5.6, "🥤", 40, { bestSeller: true }),
+          p("guarana", "Guaraná Antarctica 350ml", 4.5, "🟡", 28),
+          p("sprite", "Sprite 350ml", 4.5, "🟩", 16),
         ],
       },
       {
