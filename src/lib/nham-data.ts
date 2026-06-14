@@ -118,7 +118,7 @@ export const categories: Category[] = [
           p("ruffles", "Ruffles 76g", 11.7, "🥔", 15, { bestSeller: true }),
           p("doritos", "Doritos Queijo Nacho 84g", 12.5, "🔺", 12),
           p("fandangos", "Fandangos Presunto", 9.5, "🟧", 9),
-          p("clubsocial", "Club Social Original", 5.5, "🟡", 25),
+          p("clubsocial", "Pringles", 13.4, "🟡", 25),
         ],
       },
       {
