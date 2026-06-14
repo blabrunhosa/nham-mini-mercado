@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as MercadoRouteImport } from './routes/mercado'
+import { Route as MarmitasRouteImport } from './routes/marmitas'
+import { Route as ClubeRouteImport } from './routes/clube'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MercadoRoute = MercadoRouteImport.update({
+  id: '/mercado',
+  path: '/mercado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarmitasRoute = MarmitasRouteImport.update({
+  id: '/marmitas',
+  path: '/marmitas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClubeRoute = ClubeRouteImport.update({
+  id: '/clube',
+  path: '/clube',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,72 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/clube': typeof ClubeRoute
+  '/marmitas': typeof MarmitasRoute
+  '/mercado': typeof MercadoRoute
+  '/perfil': typeof PerfilRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/clube': typeof ClubeRoute
+  '/marmitas': typeof MarmitasRoute
+  '/mercado': typeof MercadoRoute
+  '/perfil': typeof PerfilRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/clube': typeof ClubeRoute
+  '/marmitas': typeof MarmitasRoute
+  '/mercado': typeof MercadoRoute
+  '/perfil': typeof PerfilRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/clube' | '/marmitas' | '/mercado' | '/perfil'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/clube' | '/marmitas' | '/mercado' | '/perfil'
+  id: '__root__' | '/' | '/clube' | '/marmitas' | '/mercado' | '/perfil'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ClubeRoute: typeof ClubeRoute
+  MarmitasRoute: typeof MarmitasRoute
+  MercadoRoute: typeof MercadoRoute
+  PerfilRoute: typeof PerfilRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mercado': {
+      id: '/mercado'
+      path: '/mercado'
+      fullPath: '/mercado'
+      preLoaderRoute: typeof MercadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marmitas': {
+      id: '/marmitas'
+      path: '/marmitas'
+      fullPath: '/marmitas'
+      preLoaderRoute: typeof MarmitasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clube': {
+      id: '/clube'
+      path: '/clube'
+      fullPath: '/clube'
+      preLoaderRoute: typeof ClubeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +121,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ClubeRoute: ClubeRoute,
+  MarmitasRoute: MarmitasRoute,
+  MercadoRoute: MercadoRoute,
+  PerfilRoute: PerfilRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
