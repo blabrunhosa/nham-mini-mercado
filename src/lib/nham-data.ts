@@ -275,8 +275,8 @@ export const marmitas: Marmita[] = [
   },
   {
     id: "m3",
-    name: "Fricassê de frango com arroz integral e cenoura",
-    description: "Frango cremoso com milho, arroz integral soltinho e cenoura no vapor",
+    name: "Panqueca fit de frango ao molho branco",
+    description: "Panquecas leves recheadas com frango, cobertas com molho branco fit e queijo",
     price: 25.5,
     kcal: 540,
     protein: 35,
