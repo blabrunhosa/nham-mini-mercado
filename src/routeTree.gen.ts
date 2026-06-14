@@ -13,6 +13,7 @@ import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as MercadoRouteImport } from './routes/mercado'
 import { Route as MarmitasRouteImport } from './routes/marmitas'
 import { Route as ClubeRouteImport } from './routes/clube'
+import { Route as AtendimentoRouteImport } from './routes/atendimento'
 import { Route as IndexRouteImport } from './routes/index'
 
 const PerfilRoute = PerfilRouteImport.update({
@@ -35,6 +36,11 @@ const ClubeRoute = ClubeRouteImport.update({
   path: '/clube',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AtendimentoRoute = AtendimentoRouteImport.update({
+  id: '/atendimento',
+  path: '/atendimento',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/atendimento': typeof AtendimentoRoute
   '/clube': typeof ClubeRoute
   '/marmitas': typeof MarmitasRoute
   '/mercado': typeof MercadoRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/atendimento': typeof AtendimentoRoute
   '/clube': typeof ClubeRoute
   '/marmitas': typeof MarmitasRoute
   '/mercado': typeof MercadoRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/atendimento': typeof AtendimentoRoute
   '/clube': typeof ClubeRoute
   '/marmitas': typeof MarmitasRoute
   '/mercado': typeof MercadoRoute
@@ -65,14 +74,28 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/clube' | '/marmitas' | '/mercado' | '/perfil'
+  fullPaths:
+    | '/'
+    | '/atendimento'
+    | '/clube'
+    | '/marmitas'
+    | '/mercado'
+    | '/perfil'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/clube' | '/marmitas' | '/mercado' | '/perfil'
-  id: '__root__' | '/' | '/clube' | '/marmitas' | '/mercado' | '/perfil'
+  to: '/' | '/atendimento' | '/clube' | '/marmitas' | '/mercado' | '/perfil'
+  id:
+    | '__root__'
+    | '/'
+    | '/atendimento'
+    | '/clube'
+    | '/marmitas'
+    | '/mercado'
+    | '/perfil'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AtendimentoRoute: typeof AtendimentoRoute
   ClubeRoute: typeof ClubeRoute
   MarmitasRoute: typeof MarmitasRoute
   MercadoRoute: typeof MercadoRoute
@@ -109,6 +132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClubeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/atendimento': {
+      id: '/atendimento'
+      path: '/atendimento'
+      fullPath: '/atendimento'
+      preLoaderRoute: typeof AtendimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,6 +151,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AtendimentoRoute: AtendimentoRoute,
   ClubeRoute: ClubeRoute,
   MarmitasRoute: MarmitasRoute,
   MercadoRoute: MercadoRoute,
