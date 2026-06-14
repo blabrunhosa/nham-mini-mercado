@@ -83,23 +83,32 @@ function Perfil() {
             {g.title}
           </h3>
           <div className="overflow-hidden rounded-2xl border border-border bg-surface">
-            {g.items.map((it, i) => (
-              <button
-                key={it.label}
-                className={`flex w-full items-center gap-3 p-4 text-left transition-colors hover:bg-surface-2 ${
-                  i > 0 ? "border-t border-border" : ""
-                }`}
-              >
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-surface-3 text-foreground">
-                  <it.icon className="h-5 w-5" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-semibold">{it.label}</p>
-                  {it.hint && <p className="text-[11px] text-muted-foreground">{it.hint}</p>}
-                </div>
-                <ChevronRight className="h-4 w-4 text-muted-foreground" />
-              </button>
-            ))}
+            {g.items.map((it, i) => {
+              const className = `flex w-full items-center gap-3 p-4 text-left transition-colors hover:bg-surface-2 ${
+                i > 0 ? "border-t border-border" : ""
+              }`;
+              const inner = (
+                <>
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-surface-3 text-foreground">
+                    <it.icon className="h-5 w-5" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-semibold">{it.label}</p>
+                    {it.hint && <p className="text-[11px] text-muted-foreground">{it.hint}</p>}
+                  </div>
+                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                </>
+              );
+              return "to" in it && it.to ? (
+                <Link key={it.label} to={it.to} className={className}>
+                  {inner}
+                </Link>
+              ) : (
+                <button key={it.label} className={className}>
+                  {inner}
+                </button>
+              );
+            })}
           </div>
         </section>
       ))}
