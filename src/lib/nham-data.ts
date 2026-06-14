@@ -2,6 +2,16 @@ import redbullImg from "@/assets/products/redbull.png.asset.json";
 import monsterImg from "@/assets/products/monster.png.asset.json";
 import kitkatImg from "@/assets/products/kitkat.png.asset.json";
 import strogonoffImg from "@/assets/products/strogonoff.png.asset.json";
+import bisImg from "@/assets/products/bis_lacta.png.asset.json";
+import biscoitoIntegralImg from "@/assets/products/biscoito_integral.png.asset.json";
+import amendoimImg from "@/assets/products/amendoim_japones.png.asset.json";
+import barraCerealImg from "@/assets/products/barra_de_cereal.png.asset.json";
+import barraProteinaImg from "@/assets/products/barra_de_proteina.png.asset.json";
+import mixCastanhasImg from "@/assets/products/mix_de_castanhas.png.asset.json";
+import nutsImg from "@/assets/products/nuts_premium.png.asset.json";
+import pringlesImg from "@/assets/products/pringles.png.asset.json";
+import fandangosImg from "@/assets/products/fandangos.png.asset.json";
+import doritosImg from "@/assets/products/doritos.png.asset.json";
 
 export type Stock = "in" | "low" | "out";
 
@@ -122,21 +132,21 @@ export const categories: Category[] = [
         name: "Chips & Salgadinhos",
         products: [
           p("ruffles", "Ruffles 76g", 11.7, "🥔", 15, { bestSeller: true }),
-          p("doritos", "Doritos Queijo Nacho 84g", 12.5, "🔺", 12),
-          p("fandangos", "Fandangos Presunto", 9.5, "🟧", 9),
-          p("clubsocial", "Pringles", 13.4, "🟡", 25),
+          p("doritos", "Doritos Queijo Nacho 84g", 12.5, "🔺", 12, { image: doritosImg.url }),
+          p("fandangos", "Fandangos Presunto", 9.5, "🟧", 9, { image: fandangosImg.url }),
+          p("clubsocial", "Pringles", 13.4, "🟡", 25, { image: pringlesImg.url }),
         ],
       },
       {
         id: "saudaveis",
         name: "Saudáveis",
         products: [
-          p("nuts", "Nuts Premium 30g", 7.9, "🥜", 18),
-          p("castanhas", "Mix de Castanhas 50g", 12.9, "🌰", 6, { bestSeller: true }),
-          p("barraproteina", "Barra de Proteína 20g", 9.9, "🍫", 14),
-          p("barracereal", "Barra de Cereal Trio", 4.5, "🌾", 32),
-          p("amendoim", "Amendoim Japonês 100g", 6.5, "🥜", 11),
-          p("biscoito", "Biscoito Integral", 6.9, "🍪", 8),
+          p("nuts", "Nuts Premium 30g", 7.9, "🥜", 18, { image: nutsImg.url }),
+          p("castanhas", "Mix de Castanhas 50g", 12.9, "🌰", 6, { bestSeller: true, image: mixCastanhasImg.url }),
+          p("barraproteina", "Barra de Proteína 20g", 9.9, "🍫", 14, { image: barraProteinaImg.url }),
+          p("barracereal", "Barra de Cereal Trio", 4.5, "🌾", 32, { image: barraCerealImg.url }),
+          p("amendoim", "Amendoim Japonês 100g", 6.5, "🥜", 11, { image: amendoimImg.url }),
+          p("biscoito", "Biscoito Integral", 6.9, "🍪", 8, { image: biscoitoIntegralImg.url }),
         ],
       },
     ],
@@ -152,7 +162,7 @@ export const categories: Category[] = [
         name: "Chocolates",
         products: [
           p("kitkat", "KitKat ", 5.6, "🍫", 22, { bestSeller: true, image: kitkatImg.url }),
-          p("bis", "Bis Lacta 126g", 8.9, "🟫", 14),
+          p("bis", "Bis Lacta 126g", 8.9, "🟫", 14, { image: bisImg.url }),
           p("ourobranco", "Wafer Bauducco", 5.2, "🤍", 30),
           p("lacta", "Tablete Lacta 90g", 7.5, "🍫", 11, { oldPrice: 9.5, badge: "Combo 2x R$13" }),
           p("hersheys", "Hershey's Cookies'n'Cream", 9.9, "🤎", 6),

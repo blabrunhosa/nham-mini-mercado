@@ -11,7 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { AuthProvider } from "@/lib/auth";
+import { AuthProvider, useAuth } from "@/lib/auth";
+import { LoginScreen } from "@/components/nham/LoginScreen";
 
 function NotFoundComponent() {
   return (
@@ -126,9 +127,15 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
+        <AuthGate />
       </AuthProvider>
     </QueryClientProvider>
   );
+}
+
+function AuthGate() {
+  const { ready, session } = useAuth();
+  if (!ready) return null;
+  if (!session) return <LoginScreen />;
+  return <Outlet />;
 }
