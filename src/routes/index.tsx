@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell } from "@/components/nham/Shell";
 import { ProductCard } from "@/components/nham/ProductCard";
 import { categories, marmitas } from "@/lib/nham-data";
+import { useAuth, isMember } from "@/lib/auth";
 import {
   Bell,
   Search,
