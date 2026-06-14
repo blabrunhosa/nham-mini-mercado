@@ -1,20 +1,26 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Home, ShoppingBasket, UtensilsCrossed, Sparkles, User } from "lucide-react";
+import { useAuth, isMember } from "@/lib/auth";
 
-const items = [
-  { to: "/", label: "Início", icon: Home },
-  { to: "/mercado", label: "Mercado", icon: ShoppingBasket },
-  { to: "/marmitas", label: "Marmitas", icon: UtensilsCrossed },
-  { to: "/clube", label: "Clube", icon: Sparkles },
-  { to: "/perfil", label: "Perfil", icon: User },
+const baseItems = [
+  { to: "/", label: "Início", icon: Home, memberOnly: false },
+  { to: "/mercado", label: "Mercado", icon: ShoppingBasket, memberOnly: false },
+  { to: "/marmitas", label: "Marmitas", icon: UtensilsCrossed, memberOnly: false },
+  { to: "/clube", label: "Clube", icon: Sparkles, memberOnly: true },
+  { to: "/perfil", label: "Perfil", icon: User, memberOnly: false },
 ] as const;
 
 export function BottomNav() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { session } = useAuth();
+  const items = baseItems.filter((i) => (i.memberOnly ? isMember(session) : true));
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-border glass">
-      <ul className="mx-auto grid max-w-xl grid-cols-5 px-2 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2">
+      <ul
+        className="mx-auto grid max-w-xl px-2 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2"
+        style={{ gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` }}
+      >
         {items.map(({ to, label, icon: Icon }) => {
           const active = to === "/" ? pathname === "/" : pathname.startsWith(to);
           return (
