@@ -115,8 +115,8 @@ export const categories: Category[] = [
         id: "chips",
         name: "Chips & Salgadinhos",
         products: [
-          p("ruffles", "Ruffles Original 76g", 8.9, "🥔", 15, { bestSeller: true }),
-          p("doritos", "Doritos Queijo Nacho 84g", 9.5, "🔺", 12),
+          p("ruffles", "Ruffles 76g", 11.7, "🥔", 15, { bestSeller: true }),
+          p("doritos", "Doritos Queijo Nacho 84g", 12.5, "🔺", 12),
           p("fandangos", "Fandangos Presunto", 6.5, "🟧", 9),
           p("clubsocial", "Club Social Original", 4.5, "🟡", 25),
         ],
