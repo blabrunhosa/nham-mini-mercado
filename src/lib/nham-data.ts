@@ -316,6 +316,7 @@ export const marmitas: Marmita[] = [
     carbs: 68,
     stock: 10,
     emoji: "🍛",
+    image: strogonoffImg.url,
     tag: "Premium",
     day: "sex",
   },
