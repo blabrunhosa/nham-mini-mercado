@@ -1,3 +1,8 @@
+import redbullImg from "@/assets/products/redbull.png.asset.json";
+import monsterImg from "@/assets/products/monster.png.asset.json";
+import kitkatImg from "@/assets/products/kitkat.png.asset.json";
+import strogonoffImg from "@/assets/products/strogonoff.png.asset.json";
+
 export type Stock = "in" | "low" | "out";
 
 export interface Product {
@@ -58,8 +63,8 @@ export const categories: Category[] = [
         id: "energeticos",
         name: "Energéticos",
         products: [
-          p("redbull", "Redbull 250ml", 9.8, "⚡", 18, { bestSeller: true }),
-          p("monster", "Monster Energy 473ml", 11.7, "🟢", 9),
+          p("redbull", "Redbull 250ml", 9.8, "⚡", 18, { bestSeller: true, image: redbullImg.url }),
+          p("monster", "Monster Energy 473ml", 11.7, "🟢", 9, { image: monsterImg.url }),
           p("gatorade", "Gatorade 500ml", 9.5, "🔵", 14),
         ],
       },
@@ -146,7 +151,7 @@ export const categories: Category[] = [
         id: "chocolates",
         name: "Chocolates",
         products: [
-          p("kitkat", "KitKat ", 5.6, "🍫", 22, { bestSeller: true }),
+          p("kitkat", "KitKat ", 5.6, "🍫", 22, { bestSeller: true, image: kitkatImg.url }),
           p("bis", "Bis Lacta 126g", 8.9, "🟫", 14),
           p("ourobranco", "Wafer Bauducco", 5.2, "🤍", 30),
           p("lacta", "Tablete Lacta 90g", 7.5, "🍫", 11, { oldPrice: 9.5, badge: "Combo 2x R$13" }),
