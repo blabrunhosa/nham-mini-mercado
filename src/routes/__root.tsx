@@ -11,8 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { AuthProvider, useAuth } from "@/lib/auth";
-import { LoginScreen } from "@/components/nham/LoginScreen";
 
 function NotFoundComponent() {
   return (
@@ -79,13 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nham — Mini mercado inteligente do campus" },
-      { name: "description", content: "Reserve marmitas, compre snacks e acompanhe o estoque do Nham em tempo real." },
+      { title: "NHAM! - Nunca houve alimentação melhor!" },
+      { name: "description", content: "Reserve marmitas, compre snacks e acompanhe a disponibilidade dos itens em tempo real." },
       { name: "theme-color", content: "#0A0A0A" },
-      { property: "og:title", content: "Nham" },
-      { property: "og:description", content: "O mini mercado inteligente do seu campus." },
+      { property: "og:title", content: "NHAM! - Nunca houve alimentação melhor!" },
+      { property: "og:description", content: "Reserve marmitas, compre snacks e acompanhe a disponibilidade dos itens em tempo real." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "NHAM! - Nunca houve alimentação melhor!" },
+      { name: "twitter:description", content: "Reserve marmitas, compre snacks e acompanhe a disponibilidade dos itens em tempo real." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5216fa3c-a72e-4267-8370-d97ad0d53530/id-preview-2e38e26b--4cf4650d-0f28-4115-980f-830b89ccbbb2.lovable.app-1781461221303.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5216fa3c-a72e-4267-8370-d97ad0d53530/id-preview-2e38e26b--4cf4650d-0f28-4115-980f-830b89ccbbb2.lovable.app-1781461221303.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -122,19 +124,8 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <AuthGate>
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
-        </AuthGate>
-      </AuthProvider>
+      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <Outlet />
     </QueryClientProvider>
   );
-}
-
-function AuthGate({ children }: { children: ReactNode }) {
-  const { ready, session } = useAuth();
-  if (!ready) return <div className="min-h-screen bg-background" />;
-  if (!session) return <LoginScreen />;
-  return <>{children}</>;
 }
