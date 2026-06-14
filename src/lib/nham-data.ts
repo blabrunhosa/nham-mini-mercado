@@ -2,6 +2,16 @@ import redbullImg from "@/assets/products/redbull.png.asset.json";
 import monsterImg from "@/assets/products/monster.png.asset.json";
 import kitkatImg from "@/assets/products/kitkat.png.asset.json";
 import strogonoffImg from "@/assets/products/strogonoff.png.asset.json";
+import bisImg from "@/assets/products/bis_lacta.png.asset.json";
+import biscoitoIntegralImg from "@/assets/products/biscoito_integral.png.asset.json";
+import amendoimImg from "@/assets/products/amendoim_japones.png.asset.json";
+import barraCerealImg from "@/assets/products/barra_de_cereal.png.asset.json";
+import barraProteinaImg from "@/assets/products/barra_de_proteina.png.asset.json";
+import mixCastanhasImg from "@/assets/products/mix_de_castanhas.png.asset.json";
+import nutsImg from "@/assets/products/nuts_premium.png.asset.json";
+import pringlesImg from "@/assets/products/pringles.png.asset.json";
+import fandangosImg from "@/assets/products/fandangos.png.asset.json";
+import doritosImg from "@/assets/products/doritos.png.asset.json";
 
 export type Stock = "in" | "low" | "out";
 
