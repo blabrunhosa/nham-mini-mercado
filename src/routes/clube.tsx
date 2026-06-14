@@ -42,7 +42,7 @@ function ClubePage() {
     return (
       <Shell>
         <header className="px-5 pb-4 pt-6">
-          <h1 className="text-2xl font-black tracking-tight">Clube Nham</h1>
+          <h1 className="text-2xl font-black tracking-tight">Clube NHAM!</h1>
           <p className="text-xs text-muted-foreground">Disponível apenas para alunos com conta</p>
         </header>
         <section className="px-5">
@@ -84,7 +84,7 @@ function ClubePage() {
   return (
     <Shell>
       <header className="px-5 pb-4 pt-6">
-        <h1 className="text-2xl font-black tracking-tight">Clube Nham</h1>
+        <h1 className="text-2xl font-black tracking-tight">Clube NHAM!</h1>
         <p className="text-xs text-muted-foreground">Suas compras rendendo pontos</p>
       </header>
 
