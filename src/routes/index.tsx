@@ -57,7 +57,7 @@ function Home() {
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Olá, {greetName} 👋</p>
               <p className="flex items-center gap-1 truncate text-sm font-semibold text-foreground">
                 <MapPin className="h-3.5 w-3.5 text-lime" />
-                Campus Central — Bloco A
+                Ilum
               </p>
             </div>
           </div>
