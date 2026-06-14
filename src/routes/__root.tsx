@@ -127,9 +127,15 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
+        <AuthGate />
       </AuthProvider>
     </QueryClientProvider>
   );
+}
+
+function AuthGate() {
+  const { ready, session } = useAuth();
+  if (!ready) return null;
+  if (!session) return <LoginScreen />;
+  return <Outlet />;
 }
