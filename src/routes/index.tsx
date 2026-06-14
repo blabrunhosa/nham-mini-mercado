@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell } from "@/components/nham/Shell";
 import { ProductCard } from "@/components/nham/ProductCard";
 import { categories, marmitas } from "@/lib/nham-data";
+import { useAuth, isMember } from "@/lib/auth";
 import {
   Bell,
   Search,
@@ -34,6 +35,9 @@ const shortcuts = [
 ] as const;
 
 function Home() {
+  const { session, signOut } = useAuth();
+  const member = isMember(session);
+  const greetName = member ? session.name.split(" ")[0] : "visitante";
   const allProducts = categories.flatMap((c) => c.subcategories.flatMap((s) => s.products));
   const bestSellers = allProducts.filter((p) => p.bestSeller).slice(0, 6);
   const promos = allProducts.filter((p) => p.badge).slice(0, 4);
@@ -50,7 +54,7 @@ function Home() {
               N
             </div>
             <div className="min-w-0">
-              <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Olá, estudante 👋</p>
+              <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Olá, {greetName} 👋</p>
               <p className="flex items-center gap-1 truncate text-sm font-semibold text-foreground">
                 <MapPin className="h-3.5 w-3.5 text-lime" />
                 Campus Central — Bloco A
@@ -74,45 +78,67 @@ function Home() {
         </div>
       </header>
 
-      {/* Banner Clube Nham */}
-      <section className="px-5">
-        <Link
-          to="/clube"
-          className="relative block overflow-hidden rounded-3xl border border-lime/30 bg-gradient-to-br from-lime/25 via-surface to-surface p-5"
-        >
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <span className="inline-flex items-center gap-1 rounded-full bg-lime/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-lime">
-                <Sparkles className="h-3 w-3" /> Clube Nham
-              </span>
-              <h2 className="mt-2 text-2xl font-black leading-tight text-foreground">
-                Ganhe pontos a cada Nham.
-              </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Troque por marmitas, bebidas e descontos exclusivos.
+      {/* Banner Clube Nham (somente para usuários logados) */}
+      {member ? (
+        <section className="px-5">
+          <Link
+            to="/clube"
+            className="relative block overflow-hidden rounded-3xl border border-lime/30 bg-gradient-to-br from-lime/25 via-surface to-surface p-5"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <span className="inline-flex items-center gap-1 rounded-full bg-lime/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-lime">
+                  <Sparkles className="h-3 w-3" /> Clube Nham
+                </span>
+                <h2 className="mt-2 text-2xl font-black leading-tight text-foreground">
+                  Ganhe pontos a cada Nham.
+                </h2>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Troque por marmitas, bebidas e descontos exclusivos.
+                </p>
+              </div>
+              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-lime text-lime-foreground">
+                <Sparkles className="h-6 w-6" />
+              </div>
+            </div>
+
+            <div className="mt-5">
+              <div className="mb-2 flex items-center justify-between text-[11px] font-medium text-muted-foreground">
+                <span>Nível Prata · 1.240 pts</span>
+                <span>1.500 pts → Ouro</span>
+              </div>
+              <div className="h-2 overflow-hidden rounded-full bg-surface-3">
+                <div className="h-full w-[82%] rounded-full bg-lime" />
+              </div>
+            </div>
+          </Link>
+        </section>
+      ) : (
+        <section className="px-5">
+          <button
+            onClick={signOut}
+            className="flex w-full items-center gap-4 rounded-3xl border border-border bg-surface p-4 text-left"
+          >
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-lime-soft text-lime">
+              <Sparkles className="h-6 w-6" />
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="text-sm font-bold text-foreground">Modo visitante</p>
+              <p className="truncate text-xs text-muted-foreground">
+                Entre para acumular pontos no Clube Nham
               </p>
             </div>
-            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-lime text-lime-foreground">
-              <Sparkles className="h-6 w-6" />
-            </div>
-          </div>
-
-          <div className="mt-5">
-            <div className="mb-2 flex items-center justify-between text-[11px] font-medium text-muted-foreground">
-              <span>Nível Prata · 1.240 pts</span>
-              <span>1.500 pts → Ouro</span>
-            </div>
-            <div className="h-2 overflow-hidden rounded-full bg-surface-3">
-              <div className="h-full w-[82%] rounded-full bg-lime" />
-            </div>
-          </div>
-        </Link>
-      </section>
+            <span className="rounded-full bg-lime px-3 py-1.5 text-[11px] font-bold text-lime-foreground">
+              Entrar
+            </span>
+          </button>
+        </section>
+      )}
 
       {/* Shortcuts */}
       <section className="mt-6 px-5">
-        <div className="grid grid-cols-3 gap-3">
-          {shortcuts.map(({ to, label, icon: Icon, hint }) => (
+        <div className={`grid gap-3 ${member ? "grid-cols-3" : "grid-cols-2"}`}>
+          {shortcuts.filter((s) => member || s.to !== "/clube").map(({ to, label, icon: Icon, hint }) => (
             <Link
               key={to}
               to={to}
