@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell } from "@/components/nham/Shell";
-import { Sparkles, Crown, Gift, Coffee, UtensilsCrossed, Check, Lock, TrendingUp } from "lucide-react";
+import { Sparkles, Crown, Gift, Coffee, UtensilsCrossed, Check, Lock, TrendingUp, LogIn } from "lucide-react";
+import { useAuth, isMember } from "@/lib/auth";
 
 export const Route = createFileRoute("/clube")({
   head: () => ({
@@ -32,9 +33,53 @@ const perksLocked = [
 ];
 
 function ClubePage() {
+  const { session, signOut } = useAuth();
   const points = 1240;
   const nextLevel = 1500;
   const pct = Math.min(100, Math.round((points / nextLevel) * 100));
+
+  if (!isMember(session)) {
+    return (
+      <Shell>
+        <header className="px-5 pb-4 pt-6">
+          <h1 className="text-2xl font-black tracking-tight">Clube Nham</h1>
+          <p className="text-xs text-muted-foreground">Disponível apenas para alunos com conta</p>
+        </header>
+        <section className="px-5">
+          <div className="relative overflow-hidden rounded-3xl border border-lime/30 bg-gradient-to-br from-lime/25 via-surface to-surface p-6 text-center">
+            <span className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-lime text-lime-foreground">
+              <Lock className="h-6 w-6" />
+            </span>
+            <h2 className="mt-4 text-xl font-black">Você está como visitante</h2>
+            <p className="mx-auto mt-2 max-w-xs text-sm text-muted-foreground">
+              Crie sua conta ou faça login para acumular pontos, subir de nível e desbloquear marmitas e bebidas grátis.
+            </p>
+            <button
+              onClick={signOut}
+              className="mt-5 inline-flex items-center justify-center gap-2 rounded-2xl bg-lime px-5 py-3 text-sm font-bold text-lime-foreground shadow-[0_12px_30px_-12px_var(--lime)]"
+            >
+              <LogIn className="h-4 w-4" /> Entrar na minha conta
+            </button>
+          </div>
+        </section>
+        <section className="mt-6 px-5">
+          <h3 className="mb-3 text-base font-bold">O que você desbloqueia</h3>
+          <div className="space-y-2">
+            {[...perksUnlocked, ...perksLocked.map(p => ({ icon: p.icon, label: p.label }))].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-3">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-surface-3 text-muted-foreground">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <p className="flex-1 text-sm font-semibold">{label}</p>
+                <Lock className="h-4 w-4 text-muted-foreground" />
+              </div>
+            ))}
+          </div>
+        </section>
+      </Shell>
+    );
+  }
+
 
   return (
     <Shell>
