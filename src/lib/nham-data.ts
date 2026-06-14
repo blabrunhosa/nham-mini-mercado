@@ -59,7 +59,7 @@ export const categories: Category[] = [
         products: [
           p("redbull", "Redbull 250ml", 9.8, "⚡", 18, { bestSeller: true }),
           p("monster", "Monster Energy 473ml", 11.7, "🟢", 9),
-          p("gatorade", "Gatorade 500ml", 7.5, "🔵", 14),
+          p("gatorade", "Gatorade 500ml", 9.5, "🔵", 14),
         ],
       },
       {
