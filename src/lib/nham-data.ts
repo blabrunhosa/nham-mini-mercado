@@ -147,7 +147,7 @@ export const categories: Category[] = [
         products: [
           p("kitkat", "KitKat ", 5.6, "🍫", 22, { bestSeller: true }),
           p("bis", "Bis Lacta 126g", 8.9, "🟫", 14),
-          p("ourobranco", "Ouro branco", 3.0, "🤍", 30),
+          p("ourobranco", "Wafer Bauducco", 3.0, "🤍", 30),
           p("lacta", "Tablete Lacta 90g", 7.5, "🍫", 11, { oldPrice: 9.5, badge: "Combo 2x R$13" }),
           p("hersheys", "Hershey's Cookies'n'Cream", 9.9, "🤎", 6),
         ],
