@@ -79,8 +79,12 @@ function MarmitaCard({ m, compact }: { m: Marmita; compact?: boolean }) {
   const out = m.stock === 0;
   return (
     <article className="overflow-hidden rounded-3xl border border-border bg-surface transition-colors hover:border-lime/40">
-      <div className={`relative grid place-items-center bg-gradient-to-br from-surface-3 to-surface ${compact ? "h-32 text-6xl" : "h-44 text-7xl"}`}>
-        <span>{m.emoji}</span>
+      <div className={`relative grid place-items-center overflow-hidden bg-gradient-to-br from-surface-3 to-surface ${compact ? "h-32 text-6xl" : "h-44 text-7xl"}`}>
+        {m.image ? (
+          <img src={m.image} alt={m.name} loading="lazy" className="h-full w-full object-cover" />
+        ) : (
+          <span>{m.emoji}</span>
+        )}
         {m.tag && (
           <span className="absolute left-3 top-3 rounded-full bg-lime px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-lime-foreground">
             {m.tag}
