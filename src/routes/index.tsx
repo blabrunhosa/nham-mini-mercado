@@ -137,8 +137,8 @@ function Home() {
 
       {/* Shortcuts */}
       <section className="mt-6 px-5">
-        <div className="grid grid-cols-3 gap-3">
-          {shortcuts.map(({ to, label, icon: Icon, hint }) => (
+        <div className={`grid gap-3 ${member ? "grid-cols-3" : "grid-cols-2"}`}>
+          {shortcuts.filter((s) => member || s.to !== "/clube").map(({ to, label, icon: Icon, hint }) => (
             <Link
               key={to}
               to={to}
