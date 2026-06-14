@@ -7,7 +7,16 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface p-3 transition-all hover:border-lime/40 hover:bg-surface-2">
       <div className="relative mb-3 grid aspect-square place-items-center overflow-hidden rounded-xl bg-surface-3 text-5xl">
-        <span aria-hidden>{product.emoji}</span>
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span aria-hidden>{product.emoji}</span>
+        )}
         {product.badge && (
           <span className="absolute left-2 top-2 rounded-full bg-lime px-2 py-0.5 text-[10px] font-bold text-lime-foreground">
             {product.badge}
