@@ -57,7 +57,7 @@ export const categories: Category[] = [
         id: "energeticos",
         name: "Energéticos",
         products: [
-          p("redbull", "Red Bull 250ml", 9.9, "⚡", 18, { bestSeller: true }),
+          p("redbull", "Redbull 250ml", 9.8, "⚡", 18, { bestSeller: true }),
           p("monster", "Monster Energy 473ml", 12.5, "🟢", 9),
           p("gatorade", "Gatorade 500ml", 7.5, "🔵", 14),
         ],
