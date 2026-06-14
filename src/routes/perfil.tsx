@@ -25,6 +25,7 @@ const groups = [
   {
     title: "Suporte",
     items: [
+      { icon: Headset, label: "Atendimento ao cliente", hint: "Avaliações, reclamações e sugestões", to: "/atendimento" as const },
       { icon: HelpCircle, label: "Central de ajuda" },
       { icon: Settings, label: "Preferências" },
     ],
