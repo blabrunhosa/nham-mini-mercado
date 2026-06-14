@@ -85,7 +85,7 @@ function ClubePage() {
     <Shell>
       <header className="px-5 pb-4 pt-6">
         <h1 className="text-2xl font-black tracking-tight">Clube Nham</h1>
-        <p className="text-xs text-muted-foreground">Seu campus rendendo pontos</p>
+        <p className="text-xs text-muted-foreground">Suas compras rendendo pontos</p>
       </header>
 
       {/* Hero card */}
