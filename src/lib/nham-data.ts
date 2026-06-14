@@ -145,9 +145,9 @@ export const categories: Category[] = [
         id: "chocolates",
         name: "Chocolates",
         products: [
-          p("kitkat", "KitKat 4 Fingers", 5.5, "🍫", 22, { bestSeller: true }),
+          p("kitkat", "KitKat ", 5.6, "🍫", 22, { bestSeller: true }),
           p("bis", "Bis Lacta 126g", 8.9, "🟫", 14),
-          p("ourobranco", "Ouro Branco", 3.5, "🤍", 30),
+          p("ourobranco", "Ouro branco", 3.0, "🤍", 30),
           p("lacta", "Tablete Lacta 90g", 7.5, "🍫", 11, { oldPrice: 9.5, badge: "Combo 2x R$13" }),
           p("hersheys", "Hershey's Cookies'n'Cream", 9.9, "🤎", 6),
         ],
@@ -158,7 +158,7 @@ export const categories: Category[] = [
         products: [
           p("mms", "M&M's Amendoim", 8.5, "🟤", 17),
           p("gummies", "Gummies Frutas", 6.9, "🐻", 13),
-          p("cookies", "Cookies Recheado", 5.5, "🍪", 9),
+          p("cookies", "Halls", 2.0, "🍪", 9),
         ],
       },
     ],
