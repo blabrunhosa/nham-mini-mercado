@@ -23,8 +23,8 @@ const history = [
 ];
 
 const perksUnlocked = [
-  { icon: Coffee, label: "Café grátis às segundas" },
-  { icon: Gift, label: "Brinde no aniversário" },
+  { icon: Coffee, label: "Desconto de 50 % em uma marmita / semana" },
+  { icon: Gift, label: "Pague 1 leve 2 energéticos / semana" },
 ];
 const perksLocked = [
   { icon: UtensilsCrossed, label: "1 marmita grátis / mês", at: "Nível Ouro" },
