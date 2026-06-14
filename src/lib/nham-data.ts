@@ -251,7 +251,7 @@ export const marmitas: Marmita[] = [
     id: "m1",
     name: "Omelete de frango com farofinha de bacon",
     description: "Omelete recheado com frango desfiado, farofa crocante de bacon e mix de folhas",
-    price: 23.2,
+    price: 23.6,
     kcal: 480,
     protein: 38,
     carbs: 12,
