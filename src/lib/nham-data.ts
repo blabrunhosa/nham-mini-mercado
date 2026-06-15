@@ -333,6 +333,7 @@ export const marmitas: Marmita[] = [
     stock: 2,
     initialStock: 10,
     emoji: "🥢",
+    image: yakissobaImg.url,
     tag: "Oriental",
     status: "available",
   },
