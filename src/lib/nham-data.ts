@@ -12,6 +12,19 @@ import nutsImg from "@/assets/products/nuts_premium.png.asset.json";
 import pringlesImg from "@/assets/products/pringles.png.asset.json";
 import fandangosImg from "@/assets/products/fandangos.png.asset.json";
 import doritosImg from "@/assets/products/doritos.png.asset.json";
+import aguaImg from "@/assets/products/agua_mineral.png.asset.json";
+import aguaGasImg from "@/assets/products/agua_com_gas.png.asset.json";
+import cocaImg from "@/assets/products/coca_cola_lata.png.asset.json";
+import delValleImg from "@/assets/products/del_vale_uva.png.asset.json";
+import gatoradeImg from "@/assets/products/gatorade.png.asset.json";
+import guaranaImg from "@/assets/products/guarana.png.asset.json";
+import naturalOneImg from "@/assets/products/natural_one_laranja.png.asset.json";
+import nescauImg from "@/assets/products/nescau_prontinho.png.asset.json";
+import piracanjubaImg from "@/assets/products/picaranjuba_protein.png.asset.json";
+import rufflesImg from "@/assets/products/ruffles.png.asset.json";
+import spriteImg from "@/assets/products/sprite.png.asset.json";
+import toddyImg from "@/assets/products/toddynho.png.asset.json";
+import yoproImg from "@/assets/products/yopro_25g.png.asset.json";
 
 export type Stock = "in" | "low" | "out";
 
@@ -75,48 +88,48 @@ export const categories: Category[] = [
         products: [
           p("redbull", "Redbull 250ml", 9.8, "⚡", 18, { bestSeller: true, image: redbullImg.url }),
           p("monster", "Monster Energy 473ml", 11.7, "🟢", 9, { image: monsterImg.url }),
-          p("gatorade", "Gatorade 500ml", 9.5, "🔵", 14),
+          p("gatorade", "Gatorade 500ml", 9.5, "🔵", 14, { image: gatoradeImg.url }),
         ],
       },
       {
         id: "achocolatados",
         name: "Achocolatados",
         products: [
-          p("nescau", "Nescau Prontinho 200ml", 5.5, "🍫", 22),
-          p("toddy", "Toddynho 200ml", 4.9, "🟫", 30, { bestSeller: true }),
+          p("nescau", "Nescau Prontinho 200ml", 5.5, "🍫", 22, { image: nescauImg.url }),
+          p("toddy", "Toddynho 200ml", 4.9, "🟫", 30, { bestSeller: true, image: toddyImg.url }),
         ],
       },
       {
         id: "refrigerantes",
         name: "Refrigerantes",
         products: [
-          p("coca", "Coca-Cola Lata 350ml", 5.6, "🥤", 40, { bestSeller: true }),
-          p("guarana", "Guaraná Antarctica 350ml", 4.5, "🟡", 28),
-          p("sprite", "Sprite 350ml", 4.5, "🟩", 16),
+          p("coca", "Coca-Cola Lata 350ml", 5.6, "🥤", 40, { bestSeller: true, image: cocaImg.url }),
+          p("guarana", "Guaraná Antarctica 350ml", 4.5, "🟡", 28, { image: guaranaImg.url }),
+          p("sprite", "Sprite 350ml", 4.5, "🟩", 16, { image: spriteImg.url }),
         ],
       },
       {
         id: "sucos",
         name: "Sucos",
         products: [
-          p("delvalle", "Del Valle Uva 290ml", 5.9, "🍇", 12),
-          p("naturalone", "Natural One Laranja 300ml", 8.9, "🍊", 7, { oldPrice: 10.9, badge: "-18%" }),
+          p("delvalle", "Del Valle Uva 290ml", 5.9, "🍇", 12, { image: delValleImg.url }),
+          p("naturalone", "Natural One Laranja 300ml", 8.9, "🍊", 7, { oldPrice: 10.9, badge: "-18%", image: naturalOneImg.url }),
         ],
       },
       {
         id: "proteicas",
         name: "Bebidas Proteicas",
         products: [
-          p("yopro", "YoPRO 25g Proteína", 11.9, "💪", 11, { bestSeller: true }),
-          p("piracanjuba", "Piracanjuba Protein", 9.5, "🥛", 4),
+          p("yopro", "YoPRO 25g Proteína", 11.9, "💪", 11, { bestSeller: true, image: yoproImg.url }),
+          p("piracanjuba", "Piracanjuba Protein", 9.5, "🥛", 4, { image: piracanjubaImg.url }),
         ],
       },
       {
         id: "aguas",
         name: "Águas",
         products: [
-          p("agua", "Água Mineral 500ml", 4.0, "💧", 60),
-          p("aguagas", "Água com Gás 500ml", 5.0, "🫧", 20),
+          p("agua", "Água Mineral 500ml", 4.0, "💧", 60, { image: aguaImg.url }),
+          p("aguagas", "Água com Gás 500ml", 5.0, "🫧", 20, { image: aguaGasImg.url }),
         ],
       },
     ],
@@ -131,7 +144,7 @@ export const categories: Category[] = [
         id: "chips",
         name: "Chips & Salgadinhos",
         products: [
-          p("ruffles", "Ruffles 76g", 11.7, "🥔", 15, { bestSeller: true }),
+          p("ruffles", "Ruffles 76g", 11.7, "🥔", 15, { bestSeller: true, image: rufflesImg.url }),
           p("doritos", "Doritos Queijo Nacho 84g", 12.5, "🔺", 12, { image: doritosImg.url }),
           p("fandangos", "Fandangos Presunto", 9.5, "🟧", 9, { image: fandangosImg.url }),
           p("clubsocial", "Pringles", 13.4, "🟡", 25, { image: pringlesImg.url }),
@@ -201,7 +214,7 @@ export const categories: Category[] = [
         products: [
           p("queijo", "Queijo em Porção 60g", 7.5, "🧀", 8, { expiresIn: "10 dias" }),
           p("sanduiche", "Sanduíche Frango Refrigerado", 14.9, "🥪", 6, { expiresIn: "2 dias", bestSeller: true }),
-          p("wrap", "Wrap Vegetariano", 16.9, "🌯", 3, { expiresIn: "2 dias" }),
+          
         ],
       },
     ],
@@ -248,6 +261,8 @@ export const categories: Category[] = [
   },
 ];
 
+export type MarmitaStatus = "available" | "incoming" | "new";
+
 export interface Marmita {
   id: string;
   name: string;
@@ -256,14 +271,32 @@ export interface Marmita {
   kcal: number;
   protein: number;
   carbs: number;
-  stock: number;
+  stock: number; // unidades disponíveis agora
+  initialStock?: number; // tamanho do lote inicial (para barra de progresso)
   emoji: string;
   image?: string;
   tag?: string;
-  day: "seg" | "ter" | "qua" | "qui" | "sex";
+  status: MarmitaStatus;
+  restockAt?: string; // ex: "Quarta, 18/06" — quando o lote chega
+  isNew?: boolean; // novidade no cardápio
 }
 
 export const marmitas: Marmita[] = [
+  {
+    id: "m5",
+    name: "Strogonoff de mignon com arroz branco e batata sauté",
+    description: "Tiras de filé mignon, molho cremoso, arroz branco e batatas douradas",
+    price: 30.5,
+    kcal: 720,
+    protein: 45,
+    carbs: 68,
+    stock: 7,
+    initialStock: 15,
+    emoji: "🍛",
+    image: strogonoffImg.url,
+    tag: "Premium",
+    status: "available",
+  },
   {
     id: "m1",
     name: "Omelete de frango com farofinha de bacon",
@@ -272,36 +305,11 @@ export const marmitas: Marmita[] = [
     kcal: 480,
     protein: 38,
     carbs: 12,
-    stock: 12,
+    stock: 4,
+    initialStock: 12,
     emoji: "🍳",
     tag: "Proteico",
-    day: "seg",
-  },
-  {
-    id: "m2",
-    name: "Spaghetti de abobrinha à bolonhesa",
-    description: "Macarrão de abobrinha com molho de tomate artesanal e patinho moído",
-    price: 21.5,
-    kcal: 350,
-    protein: 28,
-    carbs: 15,
-    stock: 8,
-    emoji: "🍝",
-    tag: "Low carb",
-    day: "ter",
-  },
-  {
-    id: "m3",
-    name: "Panqueca fit de frango ao molho branco",
-    description: "Panquecas leves recheadas com frango, cobertas com molho branco fit e queijo",
-    price: 25.5,
-    kcal: 540,
-    protein: 35,
-    carbs: 58,
-    stock: 5,
-    emoji: "🥘",
-    tag: "Clássico",
-    day: "qua",
+    status: "available",
   },
   {
     id: "m4",
@@ -311,31 +319,57 @@ export const marmitas: Marmita[] = [
     kcal: 590,
     protein: 32,
     carbs: 65,
-    stock: 6,
+    stock: 2,
+    initialStock: 10,
     emoji: "🥢",
     tag: "Oriental",
-    day: "qui",
+    status: "available",
   },
   {
-    id: "m5",
-    name: "Strogonoff de mignon com arroz branco e batata sauté",
-    description: "Tiras de filé mignon, molho cremoso, arroz branco e batatas douradas",
-    price: 30.5,
-    kcal: 720,
-    protein: 45,
-    carbs: 68,
-    stock: 10,
-    emoji: "🍛",
-    image: strogonoffImg.url,
-    tag: "Premium",
-    day: "sex",
+    id: "m2",
+    name: "Spaghetti de abobrinha à bolonhesa",
+    description: "Macarrão de abobrinha com molho de tomate artesanal e patinho moído",
+    price: 21.5,
+    kcal: 350,
+    protein: 28,
+    carbs: 15,
+    stock: 0,
+    initialStock: 8,
+    emoji: "🍝",
+    tag: "Low carb",
+    status: "incoming",
+    restockAt: "Quarta, 18/06",
+  },
+  {
+    id: "m3",
+    name: "Panqueca fit de frango ao molho branco",
+    description: "Panquecas leves recheadas com frango, cobertas com molho branco fit e queijo",
+    price: 25.5,
+    kcal: 540,
+    protein: 35,
+    carbs: 58,
+    stock: 0,
+    initialStock: 10,
+    emoji: "🥘",
+    tag: "Clássico",
+    status: "incoming",
+    restockAt: "Sexta, 20/06",
+  },
+  {
+    id: "m6",
+    name: "Bowl de salmão grelhado com quinoa",
+    description: "Salmão grelhado, quinoa, edamame, pepino e molho de gengibre — chegando ao cardápio",
+    price: 32.9,
+    kcal: 610,
+    protein: 42,
+    carbs: 48,
+    stock: 0,
+    initialStock: 8,
+    emoji: "🍱",
+    tag: "Novidade",
+    status: "new",
+    restockAt: "Segunda, 23/06",
+    isNew: true,
   },
 ];
 
-export const dayLabels: { id: Marmita["day"]; label: string }[] = [
-  { id: "seg", label: "Seg" },
-  { id: "ter", label: "Ter" },
-  { id: "qua", label: "Qua" },
-  { id: "qui", label: "Qui" },
-  { id: "sex", label: "Sex" },
-];
