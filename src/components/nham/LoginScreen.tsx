@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useAuth } from "@/lib/auth";
-import logoAsset from "@/assets/nham-logo.png.asset.json";
+import logo from "@/assets/minha-logo.png";
 import { Mail, Lock, ArrowRight, UserRound } from "lucide-react";
 
 export function LoginScreen() {
@@ -29,7 +29,7 @@ export function LoginScreen() {
       <div className="relative mx-auto flex min-h-screen max-w-md flex-col px-6 pb-10 pt-16">
         <div className="flex flex-col items-center text-center">
           <div className="grid h-28 w-28 place-items-center rounded-[2rem] bg-white p-4 shadow-[0_20px_60px_-20px_var(--lime)]">
-            <img src={logoAsset.url} alt="Nham" className="h-full w-full object-contain" />
+            <img src={logo} alt="NHAM" className="h-full w-full object-contain"/>
           </div>
           <h1 className="mt-8 font-display text-3xl font-black tracking-tight">
             Bem-vindo ao Nham
