@@ -88,48 +88,48 @@ export const categories: Category[] = [
         products: [
           p("redbull", "Redbull 250ml", 9.8, "⚡", 18, { bestSeller: true, image: redbullImg.url }),
           p("monster", "Monster Energy 473ml", 11.7, "🟢", 9, { image: monsterImg.url }),
-          p("gatorade", "Gatorade 500ml", 9.5, "🔵", 14),
+          p("gatorade", "Gatorade 500ml", 9.5, "🔵", 14, { image: gatoradeImg.url }),
         ],
       },
       {
         id: "achocolatados",
         name: "Achocolatados",
         products: [
-          p("nescau", "Nescau Prontinho 200ml", 5.5, "🍫", 22),
-          p("toddy", "Toddynho 200ml", 4.9, "🟫", 30, { bestSeller: true }),
+          p("nescau", "Nescau Prontinho 200ml", 5.5, "🍫", 22, { image: nescauImg.url }),
+          p("toddy", "Toddynho 200ml", 4.9, "🟫", 30, { bestSeller: true, image: toddyImg.url }),
         ],
       },
       {
         id: "refrigerantes",
         name: "Refrigerantes",
         products: [
-          p("coca", "Coca-Cola Lata 350ml", 5.6, "🥤", 40, { bestSeller: true }),
-          p("guarana", "Guaraná Antarctica 350ml", 4.5, "🟡", 28),
-          p("sprite", "Sprite 350ml", 4.5, "🟩", 16),
+          p("coca", "Coca-Cola Lata 350ml", 5.6, "🥤", 40, { bestSeller: true, image: cocaImg.url }),
+          p("guarana", "Guaraná Antarctica 350ml", 4.5, "🟡", 28, { image: guaranaImg.url }),
+          p("sprite", "Sprite 350ml", 4.5, "🟩", 16, { image: spriteImg.url }),
         ],
       },
       {
         id: "sucos",
         name: "Sucos",
         products: [
-          p("delvalle", "Del Valle Uva 290ml", 5.9, "🍇", 12),
-          p("naturalone", "Natural One Laranja 300ml", 8.9, "🍊", 7, { oldPrice: 10.9, badge: "-18%" }),
+          p("delvalle", "Del Valle Uva 290ml", 5.9, "🍇", 12, { image: delValleImg.url }),
+          p("naturalone", "Natural One Laranja 300ml", 8.9, "🍊", 7, { oldPrice: 10.9, badge: "-18%", image: naturalOneImg.url }),
         ],
       },
       {
         id: "proteicas",
         name: "Bebidas Proteicas",
         products: [
-          p("yopro", "YoPRO 25g Proteína", 11.9, "💪", 11, { bestSeller: true }),
-          p("piracanjuba", "Piracanjuba Protein", 9.5, "🥛", 4),
+          p("yopro", "YoPRO 25g Proteína", 11.9, "💪", 11, { bestSeller: true, image: yoproImg.url }),
+          p("piracanjuba", "Piracanjuba Protein", 9.5, "🥛", 4, { image: piracanjubaImg.url }),
         ],
       },
       {
         id: "aguas",
         name: "Águas",
         products: [
-          p("agua", "Água Mineral 500ml", 4.0, "💧", 60),
-          p("aguagas", "Água com Gás 500ml", 5.0, "🫧", 20),
+          p("agua", "Água Mineral 500ml", 4.0, "💧", 60, { image: aguaImg.url }),
+          p("aguagas", "Água com Gás 500ml", 5.0, "🫧", 20, { image: aguaGasImg.url }),
         ],
       },
     ],
@@ -144,7 +144,7 @@ export const categories: Category[] = [
         id: "chips",
         name: "Chips & Salgadinhos",
         products: [
-          p("ruffles", "Ruffles 76g", 11.7, "🥔", 15, { bestSeller: true }),
+          p("ruffles", "Ruffles 76g", 11.7, "🥔", 15, { bestSeller: true, image: rufflesImg.url }),
           p("doritos", "Doritos Queijo Nacho 84g", 12.5, "🔺", 12, { image: doritosImg.url }),
           p("fandangos", "Fandangos Presunto", 9.5, "🟧", 9, { image: fandangosImg.url }),
           p("clubsocial", "Pringles", 13.4, "🟡", 25, { image: pringlesImg.url }),
