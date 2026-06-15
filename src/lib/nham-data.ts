@@ -25,6 +25,16 @@ import rufflesImg from "@/assets/products/ruffles.png.asset.json";
 import spriteImg from "@/assets/products/sprite.png.asset.json";
 import toddyImg from "@/assets/products/toddynho.png.asset.json";
 import yoproImg from "@/assets/products/yopro_25g.png.asset.json";
+import hallsImg from "@/assets/products/halls.png.asset.json";
+import gummiesImg from "@/assets/products/gummies_fruta.png.asset.json";
+import mmsImg from "@/assets/products/mem_amendoim.png.asset.json";
+import hersheysImg from "@/assets/products/hersheys_cookies_n_creme.png.asset.json";
+import waferImg from "@/assets/products/wafer_bauducco.png.asset.json";
+import lactaImg from "@/assets/products/tablete_lacta_90g.png.asset.json";
+import yakissobaImg from "@/assets/marmitas/yakissoba_carne.png.asset.json";
+import panquecaImg from "@/assets/marmitas/panqueca_fit.png.asset.json";
+import spaguettiImg from "@/assets/marmitas/spaguetti_abobrinha_milanesa.png.asset.json";
+import omeleteImg from "@/assets/marmitas/omelete_frango_farofinha.png.asset.json";
 
 export type Stock = "in" | "low" | "out";
 
