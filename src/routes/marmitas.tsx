@@ -45,7 +45,7 @@ function MarmitasPage() {
         <div className="px-5 pb-3 pt-5">
           <h1 className="text-2xl font-black tracking-tight">Marmitas</h1>
           <p className="text-xs text-muted-foreground">
-            Lotes limitados · sem reposição diária
+            Do tamanho da sua fome!
           </p>
         </div>
 
