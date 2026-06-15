@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useAuth } from "@/lib/auth";
-import logo from "@/assets/minha-logo.png";
+import logo from "@/assets/logo.png.png";
 import { Mail, Lock, ArrowRight, UserRound } from "lucide-react";
 
 export function LoginScreen() {
