@@ -125,7 +125,7 @@ function Home() {
             <div className="min-w-0 flex-1">
               <p className="text-sm font-bold text-foreground">Modo visitante</p>
               <p className="truncate text-xs text-muted-foreground">
-                Entre para acumular pontos no Clube Nham
+                Entre para acumular pontos no Clube Nham!
               </p>
             </div>
             <span className="rounded-full bg-lime px-3 py-1.5 text-[11px] font-bold text-lime-foreground">
