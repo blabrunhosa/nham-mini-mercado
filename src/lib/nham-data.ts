@@ -318,6 +318,7 @@ export const marmitas: Marmita[] = [
     stock: 4,
     initialStock: 12,
     emoji: "🍳",
+    image: omeleteImg.url,
     tag: "Proteico",
     status: "available",
   },
