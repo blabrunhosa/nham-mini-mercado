@@ -348,6 +348,7 @@ export const marmitas: Marmita[] = [
     stock: 0,
     initialStock: 8,
     emoji: "🍝",
+    image: spaguettiImg.url,
     tag: "Low carb",
     status: "incoming",
     restockAt: "Quarta, 18/06",
