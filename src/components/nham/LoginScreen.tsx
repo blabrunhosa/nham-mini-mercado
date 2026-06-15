@@ -35,7 +35,7 @@ export function LoginScreen() {
             Bem-vindo ao Nham
           </h1>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-            Mini mercado inteligente do seu campus. Entre para acumular pontos no Clube Nham.
+            Mini-mercado inteligente do seu campus. Entre para acumular pontos no Clube NHAM!.
           </p>
         </div>
 
