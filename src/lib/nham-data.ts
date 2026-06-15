@@ -12,6 +12,19 @@ import nutsImg from "@/assets/products/nuts_premium.png.asset.json";
 import pringlesImg from "@/assets/products/pringles.png.asset.json";
 import fandangosImg from "@/assets/products/fandangos.png.asset.json";
 import doritosImg from "@/assets/products/doritos.png.asset.json";
+import aguaImg from "@/assets/products/agua_mineral.png.asset.json";
+import aguaGasImg from "@/assets/products/agua_com_gas.png.asset.json";
+import cocaImg from "@/assets/products/coca_cola_lata.png.asset.json";
+import delValleImg from "@/assets/products/del_vale_uva.png.asset.json";
+import gatoradeImg from "@/assets/products/gatorade.png.asset.json";
+import guaranaImg from "@/assets/products/guarana.png.asset.json";
+import naturalOneImg from "@/assets/products/natural_one_laranja.png.asset.json";
+import nescauImg from "@/assets/products/nescau_prontinho.png.asset.json";
+import piracanjubaImg from "@/assets/products/picaranjuba_protein.png.asset.json";
+import rufflesImg from "@/assets/products/ruffles.png.asset.json";
+import spriteImg from "@/assets/products/sprite.png.asset.json";
+import toddyImg from "@/assets/products/toddynho.png.asset.json";
+import yoproImg from "@/assets/products/yopro_25g.png.asset.json";
 
 export type Stock = "in" | "low" | "out";
 
