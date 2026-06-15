@@ -25,6 +25,16 @@ import rufflesImg from "@/assets/products/ruffles.png.asset.json";
 import spriteImg from "@/assets/products/sprite.png.asset.json";
 import toddyImg from "@/assets/products/toddynho.png.asset.json";
 import yoproImg from "@/assets/products/yopro_25g.png.asset.json";
+import hallsImg from "@/assets/products/halls.png.asset.json";
+import gummiesImg from "@/assets/products/gummies_fruta.png.asset.json";
+import mmsImg from "@/assets/products/mem_amendoim.png.asset.json";
+import hersheysImg from "@/assets/products/hersheys_cookies_n_creme.png.asset.json";
+import waferImg from "@/assets/products/wafer_bauducco.png.asset.json";
+import lactaImg from "@/assets/products/tablete_lacta_90g.png.asset.json";
+import yakissobaImg from "@/assets/marmitas/yakissoba_carne.png.asset.json";
+import panquecaImg from "@/assets/marmitas/panqueca_fit.png.asset.json";
+import spaguettiImg from "@/assets/marmitas/spaguetti_abobrinha_milanesa.png.asset.json";
+import omeleteImg from "@/assets/marmitas/omelete_frango_farofinha.png.asset.json";
 
 export type Stock = "in" | "low" | "out";
 
@@ -176,18 +186,18 @@ export const categories: Category[] = [
         products: [
           p("kitkat", "KitKat ", 5.6, "🍫", 22, { bestSeller: true, image: kitkatImg.url }),
           p("bis", "Bis Lacta 126g", 8.9, "🟫", 14, { image: bisImg.url }),
-          p("ourobranco", "Wafer Bauducco", 5.2, "🤍", 30),
-          p("lacta", "Tablete Lacta 90g", 7.5, "🍫", 11, { oldPrice: 9.5, badge: "Combo 2x R$13" }),
-          p("hersheys", "Hershey's Cookies'n'Cream", 9.9, "🤎", 6),
+          p("ourobranco", "Wafer Bauducco", 5.2, "🤍", 30, { image: waferImg.url }),
+          p("lacta", "Tablete Lacta 90g", 7.5, "🍫", 11, { oldPrice: 9.5, badge: "Combo 2x R$13", image: lactaImg.url }),
+          p("hersheys", "Hershey's Cookies'n'Cream", 9.9, "🤎", 6, { image: hersheysImg.url }),
         ],
       },
       {
         id: "balas",
         name: "Balas & Gomas",
         products: [
-          p("mms", "M&M's Amendoim", 8.5, "🟤", 17),
-          p("gummies", "Gummies Frutas", 6.9, "🐻", 13),
-          p("cookies", "Halls", 2.0, "🍪", 9),
+          p("mms", "M&M's Amendoim", 8.5, "🟤", 17, { image: mmsImg.url }),
+          p("gummies", "Gummies Frutas", 6.9, "🐻", 13, { image: gummiesImg.url }),
+          p("cookies", "Halls", 2.0, "🍪", 9, { image: hallsImg.url }),
         ],
       },
     ],
@@ -308,6 +318,7 @@ export const marmitas: Marmita[] = [
     stock: 4,
     initialStock: 12,
     emoji: "🍳",
+    image: omeleteImg.url,
     tag: "Proteico",
     status: "available",
   },
@@ -322,6 +333,7 @@ export const marmitas: Marmita[] = [
     stock: 2,
     initialStock: 10,
     emoji: "🥢",
+    image: yakissobaImg.url,
     tag: "Oriental",
     status: "available",
   },
@@ -336,6 +348,7 @@ export const marmitas: Marmita[] = [
     stock: 0,
     initialStock: 8,
     emoji: "🍝",
+    image: spaguettiImg.url,
     tag: "Low carb",
     status: "incoming",
     restockAt: "Quarta, 18/06",
@@ -351,6 +364,7 @@ export const marmitas: Marmita[] = [
     stock: 0,
     initialStock: 10,
     emoji: "🥘",
+    image: panquecaImg.url,
     tag: "Clássico",
     status: "incoming",
     restockAt: "Sexta, 20/06",
