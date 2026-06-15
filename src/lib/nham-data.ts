@@ -252,17 +252,13 @@ export const categories: Category[] = [
         id: "saude",
         name: "Saúde",
         products: [
-          p("vitamina", "Multivitamínico 30 caps", 29.9, "💊", 7),
           p("suplemento", "Whey Sachê 30g", 9.9, "💪", 15),
-          p("analgesico", "Analgésico 10 cps", 6.5, "💊", 22),
-          p("antitermico", "Antitérmico 10 cps", 7.5, "🌡️", 18),
         ],
       },
       {
         id: "cuidados",
         name: "Cuidados",
         products: [
-          p("protetor", "Protetor Solar FPS 50", 34.9, "🌞", 6, { oldPrice: 39.9, badge: "-12%" }),
           p("hidratante", "Hidratante Corporal", 22.9, "💧", 9),
           p("lencos", "Lenços Umedecidos 48un", 8.9, "🧻", 14),
         ],
