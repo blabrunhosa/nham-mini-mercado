@@ -50,8 +50,8 @@ function MarmitasPage() {
         </div>
 
         <div className="grid grid-cols-3 gap-2 px-5 pb-3">
-          <Stat label="Disponíveis" value={available.length} tone="lime" />
-          <Stat label="Chegando" value={incoming.length} tone="muted" />
+          <Stat label="Disponíveis" value={25} tone="lime" />
+          <Stat label="Chegando" value={30} tone="muted" />
           <Stat label="Novidades" value={novelties.length} tone="accent" />
         </div>
 
