@@ -32,7 +32,7 @@ export function LoginScreen() {
             <img src={logo} alt="NHAM" className="h-full w-full object-contain"/>
           </div>
           <h1 className="mt-8 font-display text-3xl font-black tracking-tight">
-            Bem-vindo ao Nham
+            Bem-vindo ao NHAM!
           </h1>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
             Mini-mercado inteligente do seu campus. Entre para acumular pontos no Clube NHAM!.
