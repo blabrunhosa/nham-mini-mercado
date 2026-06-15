@@ -364,6 +364,7 @@ export const marmitas: Marmita[] = [
     stock: 0,
     initialStock: 10,
     emoji: "🥘",
+    image: panquecaImg.url,
     tag: "Clássico",
     status: "incoming",
     restockAt: "Sexta, 20/06",
