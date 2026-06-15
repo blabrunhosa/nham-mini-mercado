@@ -18,7 +18,7 @@ const groups = [
     title: "Conta",
     items: [
       { icon: CreditCard, label: "Pagamentos", hint: "PIX · Cartão" },
-      { icon: MapPin, label: "Endereço do campus", hint: "Bloco A" },
+      { icon: MapPin, label: "Endereço", hint: "Ilum" },
       { icon: Bell, label: "Notificações" },
     ],
   },
