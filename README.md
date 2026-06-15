@@ -1,4 +1,4 @@
-![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](https://github.com/blabrunhosa/IP-II/blob/main/Figuras/ilum_colorida.png)
+![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](Figura/ilum_colorida.png)
 
 # 🛒 NHAM! Mini Mercado Inteligente para Universidades
 
@@ -109,4 +109,4 @@ Universidade Federal do ABC (UFABC)
 
 Projeto desenvolvido para a disciplina de **Processos e Modelos de Inovação**.
 
-![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](https://github.com/blabrunhosa/IP-II/blob/main/Figuras/ilum.png)
+![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](Figura/ilum.png)
