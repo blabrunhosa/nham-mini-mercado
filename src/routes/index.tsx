@@ -170,7 +170,7 @@ function Home() {
 
       {/* Marmitas hoje */}
       <section className="mt-7 px-5">
-        <SectionHeader title="Marmitas hoje" subtitle="Reserve antes das 11h" to="/marmitas" icon={<UtensilsCrossed className="h-4 w-4" />} inline />
+        <SectionHeader title="Marmitas hoje" subtitle="Garanta seu almoço!" to="/marmitas" icon={<UtensilsCrossed className="h-4 w-4" />} inline />
         <div className="mt-3 space-y-3">
           {todayMeals.map((m) => (
             <Link
