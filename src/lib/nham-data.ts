@@ -214,7 +214,7 @@ export const categories: Category[] = [
         products: [
           p("queijo", "Queijo em Porção 60g", 7.5, "🧀", 8, { expiresIn: "10 dias" }),
           p("sanduiche", "Sanduíche Frango Refrigerado", 14.9, "🥪", 6, { expiresIn: "2 dias", bestSeller: true }),
-          p("wrap", "Wrap Vegetariano", 16.9, "🌯", 3, { expiresIn: "2 dias" }),
+          
         ],
       },
     ],
