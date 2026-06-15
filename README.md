@@ -103,10 +103,6 @@ O sistema foi desenvolvido para fins educacionais e demonstração conceitual no
 
 ## Autora
 
-**Brenda Abrunhosa**
-
-Universidade Federal do ABC (UFABC)
-
-Projeto desenvolvido para a disciplina de **Processos e Modelos de Inovação**.
+[**Brenda Laube Abrunhosa**](https://github.com/blabrunhosa): Estudante da Ilum - Escola de Ciências
 
 ![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](Figura/ilum.png)
