@@ -261,6 +261,8 @@ export const categories: Category[] = [
   },
 ];
 
+export type MarmitaStatus = "available" | "incoming" | "new";
+
 export interface Marmita {
   id: string;
   name: string;
@@ -269,14 +271,32 @@ export interface Marmita {
   kcal: number;
   protein: number;
   carbs: number;
-  stock: number;
+  stock: number; // unidades disponíveis agora
+  initialStock?: number; // tamanho do lote inicial (para barra de progresso)
   emoji: string;
   image?: string;
   tag?: string;
-  day: "seg" | "ter" | "qua" | "qui" | "sex";
+  status: MarmitaStatus;
+  restockAt?: string; // ex: "Quarta, 18/06" — quando o lote chega
+  isNew?: boolean; // novidade no cardápio
 }
 
 export const marmitas: Marmita[] = [
+  {
+    id: "m5",
+    name: "Strogonoff de mignon com arroz branco e batata sauté",
+    description: "Tiras de filé mignon, molho cremoso, arroz branco e batatas douradas",
+    price: 30.5,
+    kcal: 720,
+    protein: 45,
+    carbs: 68,
+    stock: 7,
+    initialStock: 15,
+    emoji: "🍛",
+    image: strogonoffImg.url,
+    tag: "Premium",
+    status: "available",
+  },
   {
     id: "m1",
     name: "Omelete de frango com farofinha de bacon",
@@ -285,36 +305,11 @@ export const marmitas: Marmita[] = [
     kcal: 480,
     protein: 38,
     carbs: 12,
-    stock: 12,
+    stock: 4,
+    initialStock: 12,
     emoji: "🍳",
     tag: "Proteico",
-    day: "seg",
-  },
-  {
-    id: "m2",
-    name: "Spaghetti de abobrinha à bolonhesa",
-    description: "Macarrão de abobrinha com molho de tomate artesanal e patinho moído",
-    price: 21.5,
-    kcal: 350,
-    protein: 28,
-    carbs: 15,
-    stock: 8,
-    emoji: "🍝",
-    tag: "Low carb",
-    day: "ter",
-  },
-  {
-    id: "m3",
-    name: "Panqueca fit de frango ao molho branco",
-    description: "Panquecas leves recheadas com frango, cobertas com molho branco fit e queijo",
-    price: 25.5,
-    kcal: 540,
-    protein: 35,
-    carbs: 58,
-    stock: 5,
-    emoji: "🥘",
-    tag: "Clássico",
-    day: "qua",
+    status: "available",
   },
   {
     id: "m4",
@@ -324,31 +319,57 @@ export const marmitas: Marmita[] = [
     kcal: 590,
     protein: 32,
     carbs: 65,
-    stock: 6,
+    stock: 2,
+    initialStock: 10,
     emoji: "🥢",
     tag: "Oriental",
-    day: "qui",
+    status: "available",
   },
   {
-    id: "m5",
-    name: "Strogonoff de mignon com arroz branco e batata sauté",
-    description: "Tiras de filé mignon, molho cremoso, arroz branco e batatas douradas",
-    price: 30.5,
-    kcal: 720,
-    protein: 45,
-    carbs: 68,
-    stock: 10,
-    emoji: "🍛",
-    image: strogonoffImg.url,
-    tag: "Premium",
-    day: "sex",
+    id: "m2",
+    name: "Spaghetti de abobrinha à bolonhesa",
+    description: "Macarrão de abobrinha com molho de tomate artesanal e patinho moído",
+    price: 21.5,
+    kcal: 350,
+    protein: 28,
+    carbs: 15,
+    stock: 0,
+    initialStock: 8,
+    emoji: "🍝",
+    tag: "Low carb",
+    status: "incoming",
+    restockAt: "Quarta, 18/06",
+  },
+  {
+    id: "m3",
+    name: "Panqueca fit de frango ao molho branco",
+    description: "Panquecas leves recheadas com frango, cobertas com molho branco fit e queijo",
+    price: 25.5,
+    kcal: 540,
+    protein: 35,
+    carbs: 58,
+    stock: 0,
+    initialStock: 10,
+    emoji: "🥘",
+    tag: "Clássico",
+    status: "incoming",
+    restockAt: "Sexta, 20/06",
+  },
+  {
+    id: "m6",
+    name: "Bowl de salmão grelhado com quinoa",
+    description: "Salmão grelhado, quinoa, edamame, pepino e molho de gengibre — chegando ao cardápio",
+    price: 32.9,
+    kcal: 610,
+    protein: 42,
+    carbs: 48,
+    stock: 0,
+    initialStock: 8,
+    emoji: "🍱",
+    tag: "Novidade",
+    status: "new",
+    restockAt: "Segunda, 23/06",
+    isNew: true,
   },
 ];
 
-export const dayLabels: { id: Marmita["day"]; label: string }[] = [
-  { id: "seg", label: "Seg" },
-  { id: "ter", label: "Ter" },
-  { id: "qua", label: "Qua" },
-  { id: "qui", label: "Qui" },
-  { id: "sex", label: "Sex" },
-];
